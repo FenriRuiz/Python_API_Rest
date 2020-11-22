@@ -1,0 +1,26 @@
+Se pide implementar un servicio para crear dinámicamente diccionarios clave-valor. Además se debe crear un cliente para Python 3 que utilice este servicio de manera que la utilización de estos diccionarios sea exactamente igual que un objeto dict() de python.
+
+A continuación se muestran los casos de uso que se deben cubrir. El DoD (definition of done) de cada caso consistirá en una prueba
+automática que demuestre la funcionalidad requerida en el CdU.
+
+1) Se tiene que poder iniciar/parar el servidor que implementa el servicio. OPCIONALMENTE se puede especificar un puerto TCP.
+2) Creación de un nuevo diccionario. OPCIONALMENTE se podrá especificar un nombre o identificador para dicho diccionario. No se aceptará
+   crear un diccionario con un identificador que ya esté siendo usado por otro diccionario.
+3) Utilizar un diccionario previamente creado. Será necesario conocer el identificador de dicho diccionario.
+4) Eliminar un diccionario previamente creado.
+5) Un nuevo diccionario estará vacío y por tanto no tendrá keys.
+6) En un diccionario se deben poder crear y actualizar pares clave-valor.
+7) En un diccionario se deben poder eliminar pares clave-valor.
+8) Acceder a una clave no definida en un diccionario debe causar una excepción KeyError().
+9) Las operaciones update(), keys(), values(), clear() además del iterador estándar deben poder usarse.
+10) Un diccionario debe poder almacenar cualquier valor básico de python, incluídos listas, otros diccionarios built-in y el valor None.
+
+Para evaluar el trabajo será necesario entregar un paquete comprimido. El entorno de ejecución tendrá Tox, Flask y requests; si fuera
+necesaria alguna dependencia adicional deberá entregarse también un archivo "requeriments.txt" con las dependencias de ejecución.
+
+Así mismo se deberá incluír un README.md con el nombre y correo de alumno de los miembros de la pareja.
+
+Por último se recomienda utilizar tox para ejecutar la TS que demuestre el DoD de los CdU. En caso de requerir la ejecución de otro
+comando, debe especificarse en el archivo README.md.
+
+Para cualquier duda utilizad los canales oficiales provistos por la UCLM para tal efecto.

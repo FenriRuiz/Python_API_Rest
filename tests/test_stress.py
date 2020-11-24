@@ -10,6 +10,7 @@ import restdict
 
 SERVER_ADDRESS = 'http://localhost:9001'
 SERVER_API_URI = f'{SERVER_ADDRESS}/api/v1'
+DIC_NAME = 'identificador'
 
 STRESS_OPERATIONS = 1000
 
@@ -78,7 +79,7 @@ class TestStress(unittest.TestCase):
         self._server_ = restdict.new_server(SERVER_ADDRESS)
         self._server_.start()
 
-        self._test_dict_ = restdict.new_client(SERVER_API_URI)
+        self._test_dict_ = restdict.new_client(SERVER_API_URI, random_string())
         self._normal_dict_ = {}
 
     def tearDown(self):

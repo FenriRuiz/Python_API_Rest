@@ -1,0 +1,36 @@
+action: GLOB, msg: packaging
+cwd: /home/fenri/Escritorio/Python_API_Rest
+cmd: /usr/bin/python3 setup.py sdist --formats=zip --dist-dir /home/fenri/Escritorio/Python_API_Rest/.tox/dist
+running sdist
+running egg_info
+writing Restful_dict.egg-info/PKG-INFO
+writing dependency_links to Restful_dict.egg-info/dependency_links.txt
+writing top-level names to Restful_dict.egg-info/top_level.txt
+reading manifest file 'Restful_dict.egg-info/SOURCES.txt'
+writing manifest file 'Restful_dict.egg-info/SOURCES.txt'
+running check
+warning: check: missing required meta-data: url
+
+creating Restful dict-0.1
+creating Restful dict-0.1/Restful_dict.egg-info
+copying files to Restful dict-0.1...
+copying README.md -> Restful dict-0.1
+copying setup.py -> Restful dict-0.1
+copying Restful_dict.egg-info/PKG-INFO -> Restful dict-0.1/Restful_dict.egg-info
+copying Restful_dict.egg-info/SOURCES.txt -> Restful dict-0.1/Restful_dict.egg-info
+copying Restful_dict.egg-info/dependency_links.txt -> Restful dict-0.1/Restful_dict.egg-info
+copying Restful_dict.egg-info/top_level.txt -> Restful dict-0.1/Restful_dict.egg-info
+Writing Restful dict-0.1/setup.cfg
+creating /home/fenri/Escritorio/Python_API_Rest/.tox/dist
+creating '/home/fenri/Escritorio/Python_API_Rest/.tox/dist/Restful dict-0.1.zip' and adding 'Restful dict-0.1' to it
+adding 'Restful dict-0.1'
+adding 'Restful dict-0.1/Restful_dict.egg-info'
+adding 'Restful dict-0.1/setup.py'
+adding 'Restful dict-0.1/setup.cfg'
+adding 'Restful dict-0.1/PKG-INFO'
+adding 'Restful dict-0.1/README.md'
+adding 'Restful dict-0.1/Restful_dict.egg-info/top_level.txt'
+adding 'Restful dict-0.1/Restful_dict.egg-info/PKG-INFO'
+adding 'Restful dict-0.1/Restful_dict.egg-info/SOURCES.txt'
+adding 'Restful dict-0.1/Restful_dict.egg-info/dependency_links.txt'
+removing 'Restful dict-0.1' (and everything under it)

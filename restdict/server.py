@@ -34,6 +34,7 @@ def get_keys(dic_name):
         dic = _APP_DICT_[dic_name]
     except:
         dic = {}
+    #print(dic.keys())
     return make_response(jsonify({'result': list(dic.keys())}), 200)
 
 @_FLASK_APP_.route(f'{API_ROOT}/<dic_name>/keys/<key>', methods=['GET'])
@@ -43,14 +44,20 @@ def get_value(dic_name, key):
     if key not in _APP_DICT_[dic_name]:
         abort(404)
     dic = _APP_DICT_[dic_name]
-    print("[ DEBUGGER MAL ]: " + str(dic))
     return make_response(jsonify({'result': dic[key]}), 200)
 
 @_FLASK_APP_.route(f'{API_ROOT}/<dic_name>/keys/<key>', methods=['PUT'])
 def create_value(dic_name, key):
     if (not request.data):
         abort(400)
-    _APP_DICT_[dic_name] = {key: request.data.decode()}
+    dic = {}
+    try: 
+        dic = dict(_APP_DICT_[dic_name])
+    except:
+        pass
+    dic[key] = request.data.decode()
+    _APP_DICT_[dic_name] = dic
+    # _APP_DICT_[dic_name] = {key: request.data.decode()}
     return make_response(jsonify({'result': {dic_name: {key: request.data.decode()}}}), 201)
 
 @_FLASK_APP_.route(f'{API_ROOT}/<dic_name>/keys/<key>', methods=['POST'])
@@ -58,15 +65,23 @@ def set_value(dic_name, key):
     if (not request.data):
         abort(400)
     dic = {}
+    try: 
+        dic = dict(_APP_DICT_[dic_name])
+    except:
+        pass
     dic[key] = request.data.decode()
     _APP_DICT_[dic_name] = dic
+    # _APP_DICT_[dic_name] = {key: request.data.decode()}
     return make_response(jsonify({'result': {dic_name: {key: request.data.decode()}}}), 200)
 
 @_FLASK_APP_.route(f'{API_ROOT}/<dic_name>/keys/<key>', methods=['DELETE'])
 def remove_value(dic_name, key):
-    if key not in _APP_DICT_:
+    if dic_name not in _APP_DICT_:
         abort(404)
-    del _APP_DICT_[key]
+    if key not in _APP_DICT_[dic_name]:
+        abort(404)
+    dic = _APP_DICT_[dic_name]
+    del dic[key]
     return make_response('', 204)
 
 @_FLASK_APP_.route(f'{API_ROOT}/<dic_name>', methods=['DELETE'])

@@ -34,6 +34,7 @@ class RestDict(MutableMapping):
             raise ValueError(f'Cannot get keys, status code: {result.status_code}')
         try:
             result = json.loads(result.content.decode()).get('result', [])
+            # print(result)
         except Exception as error:
             raise ValueError(f'Cannot get keys: {error}')
         return result
@@ -76,10 +77,10 @@ class RestDict(MutableMapping):
         if result.status_code == 404:
             raise KeyError(key)
 
-    def __deldic__(self, key):
+    def deldic(self):
         result = requests.delete(f'{self._uri_}/{self._name_}')
         if result.status_code == 404:
-            raise KeyError(key)
+            raise ValueError('Cannot delete dictionary')
         
     def _keytransform(self, key):
         return key

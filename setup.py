@@ -4,10 +4,10 @@
   Prueba de progreso #1: cliente y servidor REST
 '''
 
-__version__ = '0.1'
+__version__ = '0.2'
 __license__ = 'GPLv3'
-__author__ = 'Alumno'
-__email__ = 'alumno@alu.uclm.es'
+__author__ = 'Fernando_Ruiz_Ruiz'
+__email__ = 'fernando.ruiz6@alu.uclm.es'
 
 from setuptools import setup
 
